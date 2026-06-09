@@ -1,3 +1,4 @@
+
 <?php
 /*
 Template Name: Profile
@@ -5,78 +6,81 @@ Template Name: Profile
 
 get_header();
 
+if (!is_user_logged_in()) {
+    wp_safe_redirect(home_url('/login'));
+    exit;
+}
+
 $current_user = wp_get_current_user();
 
+$balance = get_user_meta(
+    $current_user->ID,
+    'foin_coin',
+    true
+);
 
+if ($balance === '') {
+    $balance = 0;
+}
 ?>
-<div class="profile-subtitle">
-
-Le Foin ID
-
-</div>
 
 <main class="container">
 
 <div class="profile-card">
 
-<div class="profile-avatar">
+    <div class="profile-avatar">
+        👤
+    </div>
 
-👤
+    <h1>
+        <?php echo esc_html($current_user->display_name); ?>
+    </h1>
 
-</div>
+    <p class="profile-subtitle">
+        LE FOIN ID
+    </p>
 
-<h1>
+    <div class="wallet">
 
-<?php echo esc_html($current_user->display_name); ?>
+        <div class="wallet-title">
+            🪙 Foin Coin
+        </div>
 
-</h1>
+        <div class="wallet-balance">
+            <?php echo esc_html($balance); ?>
+        </div>
 
-<p>
+        <a
+            class="wallet-btn"
+            href="<?php echo esc_url(home_url('/wallet')); ?>">
+            Deposit
+        </a>
 
-Le Foin Member
+    </div>
 
-</p>
+    <div class="profile-menu">
 
-<div class="wallet">
+        <a href="<?php echo esc_url(home_url('/wallet')); ?>">
+            My Wallet
+        </a>
 
-<div class="wallet-title">
+        <a href="<?php echo esc_url(home_url('/library')); ?>">
+            My Library
+        </a>
 
-🪙 Foin Coin
+        <a href="<?php echo esc_url(home_url('/settings')); ?>">
+            Settings
+        </a>
 
-</div>
+        <a href="<?php echo wp_logout_url(home_url()); ?>">
+            Logout
+        </a>
 
-<div class="wallet-balance">
-
-0
-
-</div>
-
-<a class="wallet-btn" href="<?php echo esc_url(home_url('/wallet')); ?>">
-
-Deposit
-
-</a>
-
-</div>
-
-<div class="profile-menu">
-
-<a href="#">My Wallet</a>
-
-<a href="#">My Library</a>
-
-<a href="#">Settings</a>
-
-<a href="<?php echo wp_logout_url(home_url()); ?>">
-
-Logout
-
-</a>
-
-</div>
+    </div>
 
 </div>
 
 </main>
 
 <?php get_footer(); ?>
+
