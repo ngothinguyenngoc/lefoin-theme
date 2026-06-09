@@ -1073,3 +1073,20 @@ nav a:hover{
     font-weight:bold;
 
 }
+.coin-btn{
+
+    text-decoration:none;
+
+    color:var(--gold);
+
+    font-weight:bold;
+
+    margin-right:14px;
+
+}
+
+.coin-btn:hover{
+
+    opacity:.8;
+
+}

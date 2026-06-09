@@ -41,6 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'ID' => $user_id,
                 'display_name' => $display_name
             ));
+            update_user_meta(
+    $user_id,
+    'foin_coin',
+    100
+);
 
             wp_set_current_user($user_id);
             wp_set_auth_cookie($user_id);

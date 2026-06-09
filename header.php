@@ -36,33 +36,53 @@ wp_nav_menu(
 </nav>
 <div class="header-user">
 
-<?php if(is_user_logged_in()) : ?>
+<?php if (is_user_logged_in()) : ?>
 
-    <?php
+<?php
 
-    $current_user = wp_get_current_user();
+$current_user = wp_get_current_user();
 
-    ?>
+$balance = get_user_meta(
+    $current_user->ID,
+    'foin_coin',
+    true
+);
 
-    <a class="user-btn" href="<?php echo esc_url(home_url('/profile')); ?>">
+if ($balance === '') {
+    $balance = 0;
+}
 
-        👤 <?php echo esc_html($current_user->display_name); ?>
+?>
 
-    </a>
+<a class="coin-btn"
+href="<?php echo esc_url(home_url('/wallet')); ?>">
+
+🪙 <?php echo esc_html($balance); ?> Foin Coin
+
+</a>
+
+<a class="user-btn"
+href="<?php echo esc_url(home_url('/profile')); ?>">
+
+👤 <?php echo esc_html($current_user->display_name); ?>
+
+</a>
 
 <?php else : ?>
 
-    <a class="user-btn" href="<?php echo esc_url(home_url('/login')); ?>">
+<a class="user-btn"
+href="<?php echo esc_url(home_url('/login')); ?>">
 
-        Login
+Login
 
-    </a>
+</a>
 
-    <a class="user-btn register-btn" href="<?php echo esc_url(home_url('/register')); ?>">
+<a class="user-btn register-btn"
+href="<?php echo esc_url(home_url('/register')); ?>">
 
-        Register
+Register
 
-    </a>
+</a>
 
 <?php endif; ?>
 
