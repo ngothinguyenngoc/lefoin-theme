@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Settings
+Template Name: Wallet
 */
 
 get_header();
@@ -15,45 +15,45 @@ $current_user = wp_get_current_user();
 
 <div class="profile-avatar">
 
-⚙
+🪙
 
 </div>
 
 <h1>
 
-Settings
+Foin Coin Wallet
 
 </h1>
 
 <p>
 
-Manage your Le Foin Account
+Current Balance
 
 </p>
 
+<div class="wallet">
+
+<strong>0 Foin Coin</strong>
+
+</div>
+
 <div class="profile-menu">
 
-<a href="#">
+<a href="<?php echo home_url('/profile'); ?>">
 
-👤 Edit Profile
-
-</a>
-
-<a href="#">
-
-🔑 Change Password
+👤 Profile
 
 </a>
 
 <a href="#">
 
-📧 Email Preferences
+💳 Deposit
 
 </a>
 
-<a href="<?php echo home_url('/wallet'); ?>">
+<a href="#">
 
-🪙 Wallet
+📜 Transaction History
 
 </a>
 

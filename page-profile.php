@@ -7,7 +7,13 @@ get_header();
 
 $current_user = wp_get_current_user();
 
+
 ?>
+<div class="profile-subtitle">
+
+Le Foin ID
+
+</div>
 
 <main class="container">
 
@@ -33,9 +39,23 @@ Le Foin Member
 
 <div class="wallet">
 
-🪙
+<div class="wallet-title">
 
-<strong>0 Foin Coin</strong>
+🪙 Foin Coin
+
+</div>
+
+<div class="wallet-balance">
+
+0
+
+</div>
+
+<a class="wallet-btn" href="<?php echo esc_url(home_url('/wallet')); ?>">
+
+Deposit
+
+</a>
 
 </div>
 
