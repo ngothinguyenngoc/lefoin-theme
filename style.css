@@ -435,3 +435,77 @@ header{
     opacity:.75;
 
 }
+.single-post{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.single-thumb img{
+
+    width:100%;
+
+    border-radius:18px;
+
+    margin-bottom:35px;
+
+}
+
+.single-post h1{
+
+    font-size:56px;
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.post-meta{
+
+    color:#888;
+
+    margin-bottom:35px;
+
+}
+
+.single-content{
+
+    font-size:20px;
+
+    line-height:1.9;
+
+}
+
+.single-content p{
+
+    margin-bottom:24px;
+
+}
+
+.post-navigation{
+
+    margin:70px auto;
+
+    max-width:900px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+.related-posts{
+
+    margin-top:100px;
+
+}
+
+.related-posts h2{
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
+}
