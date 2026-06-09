@@ -32,14 +32,17 @@ the_post();
 
     <div class="post-meta">
 
-        <?php the_time('F j, Y'); ?>
+    <?php the_time('F j, Y'); ?>
 
-        ·
+    •
 
-        <?php the_category(', '); ?>
+    <?php echo lefoin_reading_time(); ?>
 
-    </div>
+    •
 
+    <?php the_category(', '); ?>
+
+</div>
     <div class="single-content">
 
         <?php the_content(); ?>
