@@ -20,20 +20,15 @@
 
 <h2><a class="logo" href="<?php echo esc_url(home_url('/')); ?>">LE FOIN® LAB</a></h2>
 
-<nav>
+<nav class="main-nav">
 
 <?php
 
 wp_nav_menu(
-
     array(
-
-        'theme_location'=>'primary',
-
-        'container'=>false
-
+        'theme_location' => 'primary',
+        'container'      => false
     )
-
 );
 
 ?>

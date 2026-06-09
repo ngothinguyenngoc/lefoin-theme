@@ -180,9 +180,9 @@ wp_reset_postdata();
 $sections = array(
 
     array("Research","research"),
+    array("Games","game"),
     array("Books","books"),
     array("Comics","comics"),
-    array("Games","game"),
     array("Tarot","tarot"),
     array("Foin Coin™","foin-coin")
 
