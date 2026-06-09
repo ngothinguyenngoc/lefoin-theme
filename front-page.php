@@ -58,10 +58,8 @@ function lefoin_show_category($title,$slug){
 
     <h2><?php echo esc_html($title); ?></h2>
 
-    href="<?php echo esc_url(
-get_category_link(
-get_category_by_slug($slug)
-)); ?>"
+    <a class="view-all"
+       href="<?php echo esc_url(get_category_link(get_category_by_slug($slug))); ?>">
 
         View All →
 
@@ -93,63 +91,7 @@ $query->the_post();
 
 ?>
 
-<div class="post-card">
-
-    <?php if(has_post_thumbnail()) : ?>
-
-        <div class="post-thumb">
-
-            <a href="<?php the_permalink(); ?>">
-
-                <?php the_post_thumbnail('medium'); ?>
-
-            </a>
-
-        </div>
-
-    <?php endif; ?>
-
-    <div class="post-content">
-
-        <h3>
-
-            <a href="<?php the_permalink(); ?>">
-
-                <?php the_title(); ?>
-
-            </a>
-
-        </h3>
-
-        <p>
-
-            <?php
-
-            echo wp_trim_words(
-
-                get_the_excerpt(),
-
-                22
-
-            );
-
-            ?>
-
-        </p>
-
-        <a class="readmore"
-
-           href="<?php the_permalink(); ?>">
-
-            Read More →
-
-        </a>
-
-    </div>
-
-</div>
-
-<?php
+<?php get_template_part('template-parts/card'); ?>
 
 endwhile;
 
