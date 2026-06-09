@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php lefoin_breadcrumb(); ?>
 
 <main class="container">
 

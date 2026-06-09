@@ -20,3 +20,40 @@ function lefoin_reading_time(){
     return $minutes . ' min read';
 
 }
+function lefoin_breadcrumb(){
+
+    if(is_front_page()){
+        return;
+    }
+
+    echo '<div class="breadcrumb">';
+
+    echo '<a href="' . home_url() . '">Home</a>';
+
+    if(is_single()){
+
+        $cats = get_the_category();
+
+        if(!empty($cats)){
+
+            echo ' &nbsp;>&nbsp; ';
+
+            echo '<a href="' .
+                get_category_link($cats[0]->term_id)
+                . '">';
+
+            echo esc_html($cats[0]->name);
+
+            echo '</a>';
+
+        }
+
+        echo ' &nbsp;>&nbsp; ';
+
+        the_title();
+
+    }
+
+    echo '</div>';
+
+}
