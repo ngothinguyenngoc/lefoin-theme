@@ -1,0 +1,1 @@
+Le Foin is a research-driven digital universe powered by Le Foin ID and Foin Coin.

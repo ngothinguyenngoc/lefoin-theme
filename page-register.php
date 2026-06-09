@@ -46,6 +46,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     'foin_coin',
     100
 );
+lefoin_add_transaction(
+
+    $user_id,
+
+    'bonus',
+
+    100,
+
+    'Welcome Bonus'
+
+);
 
             wp_set_current_user($user_id);
             wp_set_auth_cookie($user_id);

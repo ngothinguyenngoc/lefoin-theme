@@ -61,8 +61,11 @@ if ($balance === '') {
     <div class="profile-menu">
 
         <a href="<?php echo esc_url(home_url('/wallet')); ?>">
-            My Wallet
-        </a>
+My Wallet
+</a>
+<a href="<?php echo esc_url(home_url('/transactions')); ?>">
+Transactions
+</a>
 
         <a href="<?php echo esc_url(home_url('/library')); ?>">
             My Library
