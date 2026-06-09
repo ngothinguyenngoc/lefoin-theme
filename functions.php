@@ -1,32 +1,5 @@
 <?php
 
-function lefoin_setup(){
-
-    add_theme_support('title-tag');
-
-    add_theme_support('post-thumbnails');
-
-    add_theme_support('menus');
-
-}
-
-add_action('after_setup_theme','lefoin_setup');
-
-
-function lefoin_assets(){
-
-    wp_enqueue_style(
-
-        'lefoin-style',
-
-        get_stylesheet_uri(),
-
-        [],
-
-        filemtime(get_stylesheet_directory().'/style.css')
-
-    );
-
-}
-
-add_action('wp_enqueue_scripts','lefoin_assets');
+require_once get_template_directory() . '/inc/setup.php';
+require_once get_template_directory() . '/inc/helpers.php';
+require_once get_template_directory() . '/inc/theme-options.php';
