@@ -58,10 +58,10 @@ function lefoin_show_category($title,$slug){
 
     <h2><?php echo esc_html($title); ?></h2>
 
-    <a
-        class="view-all"
-        href="<?php echo get_category_link(get_category_by_slug($slug)); ?>"
-    >
+    href="<?php echo esc_url(
+get_category_link(
+get_category_by_slug($slug)
+)); ?>"
 
         View All →
 
