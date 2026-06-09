@@ -8,36 +8,26 @@
     <div class="hero-content">
 
         <span class="hero-tag">
-
             LE FOIN® LAB
-
         </span>
 
         <h1>
-
             Research Meets Entertainment
-
         </h1>
 
         <p>
-
             Building worlds through science,
             stories, software and imagination.
-
         </p>
 
         <div class="hero-buttons">
 
             <a href="#research" class="hero-btn">
-
                 Explore Universe
-
             </a>
 
             <a href="/category/research" class="hero-btn hero-outline">
-
                 Latest Research
-
             </a>
 
         </div>
@@ -48,34 +38,42 @@
 
 <?php
 
-function lefoin_show_category($title,$slug){
+function lefoin_show_category($title, $slug){
 
 ?>
 
 <section class="universe-card">
 
-   <div class="section-header">
+    <div class="section-header">
 
-    <h2><?php echo esc_html($title); ?></h2>
+        <h2><?php echo esc_html($title); ?></h2>
 
-    <a class="view-all"
-       href="<?php echo esc_url(get_category_link(get_category_by_slug($slug))); ?>">
+        <?php
+        $cat = get_category_by_slug($slug);
 
-        View All →
+        if($cat){
+        ?>
 
-    </a>
+        <a
+            class="view-all"
+            href="<?php echo esc_url(get_category_link($cat)); ?>">
 
-</div>
+            View All →
+
+        </a>
+
+        <?php } ?>
+
+    </div>
 
 <?php
 
-$query=new WP_Query([
+$query = new WP_Query(array(
 
-    'posts_per_page'=>5,
+    'posts_per_page' => 5,
+    'category_name'  => $slug
 
-    'category_name'=>$slug
-
-]);
+));
 
 if($query->have_posts()) :
 
@@ -87,11 +85,62 @@ if($query->have_posts()) :
 
 while($query->have_posts()) :
 
-$query->the_post();
+    $query->the_post();
 
 ?>
 
-<?php get_template_part('template-parts/card'); ?>
+<div class="post-card">
+
+    <?php if(has_post_thumbnail()) : ?>
+
+    <div class="post-thumb">
+
+        <a href="<?php the_permalink(); ?>">
+
+            <?php the_post_thumbnail('medium'); ?>
+
+        </a>
+
+    </div>
+
+    <?php endif; ?>
+
+    <div class="post-content">
+
+        <h3>
+
+            <a href="<?php the_permalink(); ?>">
+
+                <?php the_title(); ?>
+
+            </a>
+
+        </h3>
+
+        <p>
+
+            <?php
+            echo wp_trim_words(
+                get_the_excerpt(),
+                22
+            );
+            ?>
+
+        </p>
+
+        <a
+            class="readmore"
+            href="<?php the_permalink(); ?>">
+
+            Read More →
+
+        </a>
+
+    </div>
+
+</div>
+
+<?php
 
 endwhile;
 
@@ -121,28 +170,22 @@ wp_reset_postdata();
 
 }
 
-$sections=[
+$sections = array(
 
-["Research","research"],
+    array("Research","research"),
+    array("Books","books"),
+    array("Comics","comics"),
+    array("Games","game"),
+    array("Tarot","tarot"),
+    array("Foin Coin™","foin-coin")
 
-["Books","books"],
-
-["Comics","comics"],
-
-["Games","game"],
-
-["Tarot","tarot"],
-
-["Foin Coin™","foin-coin"]
-
-];
+);
 
 foreach($sections as $section){
 
     lefoin_show_category(
 
         $section[0],
-
         $section[1]
 
     );
@@ -154,4 +197,3 @@ foreach($sections as $section){
 </main>
 
 <?php get_footer(); ?>
-
