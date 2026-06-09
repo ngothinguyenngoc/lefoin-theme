@@ -22,28 +22,23 @@
 
 <nav>
 
-<a href="<?php echo home_url('/category/research'); ?>">
-Research
-</a>
+<?php
 
-<a href="<?php echo home_url('/category/books'); ?>">
-Books
-</a>
+wp_nav_menu(
 
-<a href="<?php echo home_url('/category/comics'); ?>">
-Comics
-</a>
+    array(
 
-<a href="<?php echo home_url('/category/game'); ?>">
-Games
-</a>
+        'theme_location'=>'primary',
 
-<a href="<?php echo home_url('/category/music'); ?>">
-Music
-</a>
+        'container'=>false
+
+    )
+
+);
+
+?>
 
 </nav>
-
 </div>
 
 </header>
