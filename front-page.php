@@ -12,7 +12,14 @@
         </span>
 
         <h1>
-            Research Meets Entertainment
+          <?php
+
+echo get_theme_mod(
+    'lefoin_hero_title',
+    'Research Meets Entertainment'
+);
+
+?>
         </h1>
 
         <p>
