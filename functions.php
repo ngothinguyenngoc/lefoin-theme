@@ -5,4 +5,4 @@ require_once get_template_directory() . '/inc/helpers.php';
 require_once get_template_directory() . '/inc/theme-options.php';
 require_once get_template_directory() . '/inc/wallet.php';
 require_once get_template_directory() . '/inc/membership.php';
-require_once get_template_directory() . '/inc/transaction.php';
+require_once get_template_directory() . '/inc/transactions.php';

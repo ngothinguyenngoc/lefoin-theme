@@ -43,13 +43,13 @@ $transactions = lefoin_get_transactions(
 
     <?php else : ?>
 
-        <?php foreach($transactions as $transactions) : ?>
+        <?php foreach($transactions as $transaction) : ?>
 
             <div class="transaction-item">
 
                 <strong>
 
-                <?php echo esc_html($transactions['amount']); ?>
+                <?php echo esc_html($transaction['amount']); ?>
 
                 Foin Coin
 
@@ -57,13 +57,13 @@ $transactions = lefoin_get_transactions(
 
                 <br>
 
-                <?php echo esc_html($transactions['note']); ?>
+                <?php echo esc_html($transaction['note']); ?>
 
                 <br>
 
                 <small>
 
-                <?php echo esc_html($transactions['time']); ?>
+                <?php echo esc_html($transaction['time']); ?>
 
                 </small>
 
