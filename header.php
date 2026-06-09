@@ -18,15 +18,36 @@
 
 <div class="container">
 
-<h2>LE FOIN® LAB</h2>
+<h2>
+    <a class="logo"
+href="<?php echo esc_url(home_url('/')); ?>">
+
+LE FOIN® LAB
+
+</a>
+</h2>
 
 <nav>
 
-<a href="#">Research</a>
-<a href="#">Books</a>
-<a href="#">Comics</a>
-<a href="#">Games</a>
-<a href="#">Music</a>
+<a href="<?php echo home_url('/category/research'); ?>">
+Research
+</a>
+
+<a href="<?php echo home_url('/category/books'); ?>">
+Books
+</a>
+
+<a href="<?php echo home_url('/category/comics'); ?>">
+Comics
+</a>
+
+<a href="<?php echo home_url('/category/game'); ?>">
+Games
+</a>
+
+<a href="<?php echo home_url('/category/music'); ?>">
+Music
+</a>
 
 </nav>
 
