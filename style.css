@@ -811,3 +811,212 @@ nav a:hover{
     color:var(--gold);
 
 }
+.auth-box{
+
+    max-width:520px;
+
+    margin:80px auto;
+
+    background:#181C23;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    border:1px solid #222;
+
+}
+
+.auth-box h1{
+
+    margin-bottom:12px;
+
+}
+
+.auth-box p{
+
+    color:#aaa;
+
+    margin-bottom:28px;
+
+}
+
+.auth-box label{
+
+    display:block;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+}
+
+.auth-box input{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#111;
+
+    border:1px solid #333;
+
+    color:white;
+
+    border-radius:10px;
+
+}
+
+.auth-box button{
+
+    margin-top:28px;
+
+    width:100%;
+
+    padding:16px;
+
+    background:var(--gold);
+
+    color:black;
+
+    border:none;
+
+    border-radius:999px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+.auth-box button:hover{
+
+    opacity:.9;
+
+}
+.header-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.user-btn{
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    color:white;
+
+    border:1px solid #333;
+
+    transition:.2s;
+
+}
+
+.user-btn:hover{
+
+    border-color:var(--gold);
+
+    color:var(--gold);
+
+}
+
+.register-btn{
+
+    background:var(--gold);
+
+    color:black;
+
+    font-weight:bold;
+
+    border:none;
+
+}
+
+.register-btn:hover{
+
+    opacity:.9;
+
+    color:black;
+
+}
+.profile-card{
+
+    max-width:700px;
+
+    margin:80px auto;
+
+    background:#181C23;
+
+    border:1px solid #222;
+
+    border-radius:18px;
+
+    padding:50px;
+
+    text-align:center;
+
+}
+
+.profile-avatar{
+
+    font-size:72px;
+
+    margin-bottom:20px;
+
+}
+
+.wallet{
+
+    margin:30px 0;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    background:#111;
+
+    font-size:24px;
+
+}
+
+.profile-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.profile-menu a{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:#222;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    transition:.2s;
+
+}
+
+.profile-menu a:hover{
+
+    background:var(--gold);
+
+    color:black;
+
+}

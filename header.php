@@ -34,6 +34,39 @@ wp_nav_menu(
 ?>
 
 </nav>
+<div class="header-user">
+
+<?php if(is_user_logged_in()) : ?>
+
+    <?php
+
+    $current_user = wp_get_current_user();
+
+    ?>
+
+    <a class="user-btn" href="<?php echo esc_url(home_url('/profile')); ?>">
+
+        👤 <?php echo esc_html($current_user->display_name); ?>
+
+    </a>
+
+<?php else : ?>
+
+    <a class="user-btn" href="<?php echo esc_url(home_url('/login')); ?>">
+
+        Login
+
+    </a>
+
+    <a class="user-btn register-btn" href="<?php echo esc_url(home_url('/register')); ?>">
+
+        Register
+
+    </a>
+
+<?php endif; ?>
+
+</div>
 </div>
 
 </header>
