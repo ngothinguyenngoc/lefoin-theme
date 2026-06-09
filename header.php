@@ -18,14 +18,7 @@
 
 <div class="container">
 
-<h2>
-    <a class="logo"
-href="<?php echo esc_url(home_url('/')); ?>">
-
-LE FOIN® LAB
-
-</a>
-</h2>
+<h2><a class="logo" href="<?php echo esc_url(home_url('/')); ?>">LE FOIN® LAB</a></h2>
 
 <nav>
 
