@@ -2,10 +2,8 @@
 
 function lefoin_get_balance($user_id){
 
-    $balance = get_user_meta(
-        $user_id,
-        'foin_coin',
-        true
+    $balance = lefoin_get_balance(
+    $current_user->ID
     );
 
     if($balance === ''){

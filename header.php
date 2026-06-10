@@ -42,10 +42,8 @@ wp_nav_menu(
 
 $current_user = wp_get_current_user();
 
-$balance = get_user_meta(
-    $current_user->ID,
-    'foin_coin',
-    true
+$balance = lefoin_get_balance(
+    $current_user->ID
 );
 
 if ($balance === '') {
